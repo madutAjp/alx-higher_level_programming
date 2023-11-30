@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    print(''.join(chr(i) for i in range(65, 91)))
+    import string; print(''.join(getattr(string, 'ascii_uppercase')))
