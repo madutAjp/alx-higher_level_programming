@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    print(*map(chr, range(65, 91)), sep='')
+    print(*list(iter(__import__('string').ascii_uppercase)), sep='')
