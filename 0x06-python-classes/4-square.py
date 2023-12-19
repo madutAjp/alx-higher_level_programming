@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-
-
-"""class square that defines a square """
+"""class Square that defines a square"""
 
 
 class Square:
-    """class square that defines a square"""
+    """class Square that defines a square"""
 
     def __init__(self, size=0):
-        """Iinstantiation with optional size"""
+        """Instantiation with optional size"""
         self.__size = size
 
     @property
@@ -26,6 +24,7 @@ class Square:
                 raise ValueError("size must be >= 0")
         else:
             raise TypeError("size must be an integer")
+
     def area(self):
-        """public instance method that returns the current square area"""
+        """Public instance method that returns the current square area"""
         return self.__size * self.__size
