@@ -1,7 +1,14 @@
 #!/usr/bin/python3
-#a python script that fetches
+"""This is a script that fetches data from
+    https://alx-intranet.hbtn.io/status
+"""
+
 
 import urllib.request
-req = urllib.request.Request(https://alx-intranet.hbtn.io/status)
-with urllib.request.urlopen(req) as response:
-    the_page = response.read()
+
+with urllib.urlopen("https://alx-intranet.hbtn.io/status") as response:
+    body = response.read()
+    print("Body response:")
+    print("\t- type: {}".format(type(body)))
+    print("\t-content: {}".format(body))
+    print("\t-utf8 content: {}".format(body.decode('utf-8')))
