@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""
-A script that takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter.
+"""sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter.
+Usage: ./8-json_api.py <letter>
+- The letter is send as the value of the variable 'q'.
+- If no letter is provided, sends 'q="".
 """
 import requests
 from sys import argv
