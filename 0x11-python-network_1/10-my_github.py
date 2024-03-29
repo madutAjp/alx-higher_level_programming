@@ -1,19 +1,12 @@
 #!/usr/bin/python3
-"""A  script that takes your GitHub credentials (username and password) and uses the GitHub API to display your id
+"""Uses the GitHub API to display a GitHub ID based on given credentials (username and password) and uses the GitHub API to display your id
 """
+import sys
 import requests
-from sys import argv
+from requests.auth import HTTPBasicAuth
+
 
 if __name__ == '__main__':
-    username = argv[1]
-    token = argv[2]
-    url = "https://api.github.com/user"
-    headers = {
-            "Authorization": f"token {token}",
-            "Accept": "application/vnd.github.v3+json",
-            }
-    response = requests.get(url, header=headers)
-    if response.status_code == 200:
-        print(response.json()["id"])
-    else:
-        print(None)
+    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
